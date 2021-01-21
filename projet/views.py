@@ -34,3 +34,9 @@ def update(request,id):
         form.save()
         messages.success(request,'Employee Update Successfully')
         return render(request,'edit.html',{"edit":updateemploy})
+
+def deleteemploy(request,id):
+    deletemploy=EmpModel.objects.get(id=id)
+    deletemploy.delete()
+    tous=EmpModel.objects.all()
+    return render(request,'index.html',{"donnee":tous})

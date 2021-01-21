@@ -26,7 +26,7 @@
             <td>{{ resultat.salaire }}</td>
             <td>{{ resultat.genre }}</td>
             <td><a href="{% url 'edit' resultat.id %}">Modifier</a></td>
-            <td><a href="#">Supprimer</a></td>
+            <td><a href="{% url 'delete' resultat.id %}" onclick="return confirm('voulez-vous Supprimer cet employe')">Supprimer</a></td>
         </tr>
         {% endfor %}
     </table>

@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^insert/$',views.insert,name="insert"),
     url(r'^edit/(?P<id>[0-9]+)$',views.edit,name="edit"),
     url(r'^update/(?P<id>[0-9]+)$',views.update,name="update"),
+    url(r'^delete/(?P<id>[0-9]+)$',views.deleteemploy,name="delete"),
 ]
