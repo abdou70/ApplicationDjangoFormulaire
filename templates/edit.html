@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CRUD OPERATION WITH POSGRES</title>
+</head>
+<center>
+    <h1>How to Edit operation with DJANGO</h1>
+    <h3>TUTORIEL DJANGO WEB</h3>
+    <hr/>
+    <form method="POST" action="/update/{{ edit.id }}">
+            {% csrf_token %}
+        <table border="1">
+        <tr>
+            <td>Id-Employe</td>
+            <td><input type="text" name="id" value="{{ edit.id }}" readonly></td>
+        </tr>
+        <tr>
+                <td>Nom-Employe</td>
+                <td><input type="text" name="nom" value="{{ edit.nom }}"></td>
+        </tr>
+        <tr>
+                <td>Prenom-Employe</td>
+                <td><input type="text" name="prenom" value="{{ edit.prenom }}"></td>
+        </tr>
+        <tr>
+                <td>Date_naiss-Employe</td>
+                <td><input type="text" name="date_naissance" value="{{ edit.date_naissance }}"></td>
+        </tr>
+        <tr>
+                <td>Slaire-Employe</td>
+                <td><input type="text" name="salaire" value="{{ edit.salaire }}"></td>
+        </tr>
+        <tr>
+                <td>Genre-Employe</td>
+                <td><input type="text" name="genre" value="{{ edit.genre }}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Enregistrer"></td>
+            <td>{% if messages %}
+                {% for mess in messages %}
+                <b style="color:green;">{{ mess }}</b>
+                {% endfor %}
+            {% endif %}</td>
+        </tr>
+        </table>
+    </form>
+    <strong><a href="{% url 'index' %}"> Page d'acceuil</a></strong>
+</center>
+
+</html>

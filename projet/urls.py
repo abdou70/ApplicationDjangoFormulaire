@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',views.index,name="index"),
     url(r'^insert/$',views.insert,name="insert"),
+    url(r'^edit/(?P<id>[0-9]+)$',views.edit,name="edit"),
+    url(r'^update/(?P<id>[0-9]+)$',views.update,name="update"),
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from projet.models import EmpModel
 from django.contrib import messages
+from projet.forms import Empforms
 
 
 def index(request):
@@ -20,4 +21,16 @@ def insert(request):
             messages.success(request,'Employee '+savemploy.prenom+' est enregistrer avec success')
             return render(request,'insert.html')
     else:
-            return render(request,'insert.html')        
+            return render(request,'insert.html')   
+
+def edit(request,id):
+    editemploy=EmpModel.objects.get(id=id)
+    return render(request,'edit.html',{"edit":editemploy})     
+
+def update(request,id):
+    updateemploy=EmpModel.objects.get(id=id)
+    form=Empforms(request.POST,instance=updateemploy)
+    if form.is_valid():
+        form.save()
+        messages.success(request,'Employee Update Successfully')
+        return render(request,'edit.html',{"edit":updateemploy})
