@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CRUD OPERATION WITH POSGRES</title>
+</head>
+<center>
+    <h1>How to Create operation with DJANGO</h1>
+    <h3>TUTORIEL DJANGO WEB</h3>
+    <hr/>
+    <strong><a href="{% url 'insert' %}">Ajouter un nouveau employee </a></strong>
+    <table border="1">
+        <tr>
+            <th>Employee Id</th>
+            <th>NomEmploye</th>
+            <th>PrenomEmployee</th>
+            <th>Date_naissance</th>
+            <th>Adresse</th>
+            <th>Genre</th>
+        </tr>
+        {% for resultat in donnee %}
+        <tr>
+            <td>{{ resultat.id }}</td>
+            <td>{{ resulat.nom }}</td>
+            <td>{{ resulat.prenom }}</td>
+            <td>{{ resulat.date_naissance }}</td>
+            <td>{{ resulat.salaire }}</td>
+            <td>{{ resulat.genre }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</html>
